@@ -6,7 +6,10 @@
 static void sighandler(int signo){
   if (signo == SIGINT){
     printf("\nprogram exits due to SIGINT\n");
-    exit(1);
+    exit(0);
+  }
+  if (signo == SIGUSR1){
+    printf("parent PID: %d\n", getppid());
   }
 }
 
